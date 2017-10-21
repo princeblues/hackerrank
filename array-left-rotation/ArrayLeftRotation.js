@@ -25,17 +25,13 @@ function main() {
     var n = parseInt(n_temp[0]);
     var k = parseInt(n_temp[1]);
     a = readLine().split(' ');
-    a = a.map(Number);
-    
-    for (rotate = 0; rotate < k; rotate++)
-     {
-       var firstValue = a[0];
-       for(firstRotate = 0; firstRotate < (n-1); firstRotate++)
-        {
-          a[firstRotate] = a[firstRotate+1];         
-        }
-       a[n-1] = firstValue;
-     }
-    
-    console.log(a.join(" "));  
+    a = a.map(Number);    
+    while(k>0)
+    {
+      var firstValue=a.shift();
+      a.push(firstValue);
+      k--;
+    }
+    console.log(a.join(" "));
+
 }
